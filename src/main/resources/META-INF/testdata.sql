@@ -1,3 +1,4 @@
+USE seed;
 INSERT INTO users (user_name, user_pass) VALUES ('user', 'test');
 INSERT INTO users (user_name, user_pass) VALUES ('admin', 'test');
 INSERT INTO roles (role_name) VALUES ('user');
