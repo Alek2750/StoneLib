@@ -3,14 +3,19 @@ import facade from "./apiFacade";
 import './App.css';
 import { Navbar, NavItem } from "react-bootstrap";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import Login from './Jwt.js';
-import { user } from './Jwt.js';
+
 //Note: 'npm install react-bootstrap --save' kan forekomme nødvendigt 
 
 
 const Home = () => <div><h1>Welcome to the page! Please Login to continue</h1></div>
 //Indsæt kode
-//const Login = () => <div className="Login"><h1>Link jwt siden her</h1></div>;
+const Login = () => <div className="Login"><h2>Login</h2>
+<form >
+    <input placeholder="Username" id="username" />
+    <input type="password" placeholder="Password" id="password" />
+    <button >Login</button>
+    <button >Register</button>
+</form></div>;
 //Indsæt kode
 const Logout = () => <div>{facade.logout()}You have now been logged out</div>;
 //Indsæt kode
@@ -31,7 +36,7 @@ class NaviBar extends Component {
                         <NavLink to="/Data">
                             <div>Data</div>
                         </NavLink>
-                        You are logged in as: {user}
+                        You are logged in as: {}
                     </Navbar>
 
                     <Route exact path="/" component={Home} />
