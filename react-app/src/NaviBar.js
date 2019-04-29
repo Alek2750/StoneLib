@@ -2,9 +2,9 @@ import React, { Component } from "react"
 import facade from "./apiFacade";
 import './App.css';
 import { Navbar, NavItem } from "react-bootstrap";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Login from './Jwt.js';
-import {user} from './Jwt.js';
+import { user } from './Jwt.js';
 //Note: 'npm install react-bootstrap --save' kan forekomme nødvendigt 
 
 
@@ -22,17 +22,17 @@ class NaviBar extends Component {
 
                 <div>
                     <Navbar>
-                        <NavItem href="/">
+                        <NavLink to="/">
                             <div>Home</div>
-                        </NavItem>
-                        <NavItem href="/Login">
+                        </NavLink>
+                        <NavLink to="/Login">
                             <div>Login</div>
-                        </NavItem>
-                        <NavItem href="/Data">
+                        </NavLink>
+                        <NavLink to="/Data">
                             <div>Data</div>
-                        </NavItem>
+                        </NavLink>
                         You are logged in as: {user}
-        </Navbar>
+                    </Navbar>
 
                     <Route exact path="/" component={Home} />
                     <Route path="/Login" component={Login} />
